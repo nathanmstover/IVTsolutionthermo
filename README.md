@@ -6,9 +6,8 @@ Ionic speciation model for predicting Mg2PPi solubility in IVT reaction mixtures
 
 ## What this code does
 
-The model solves for the supersaturation of Mg2PPi·3.5H2O as defined in Eq. 1. Free ion concentrations [Mg2+] and [PPi4-] are determined by solving the speciation equilibria listed in Table S1 (SI Section 5), which govern how Mg, PPi, ATP, spermidine, Na+, and H+ partition among complexes in the IVT mixture (see Figure 4a for a schematic). Equilibrium constants at 37°C are obtained from the 25°C values in Table S1 via the van't Hoff relation. The single fitted parameter is Ksp of Mg2PPi·3.5H2O, fit to the ICP-MS solubility measurements in Figure S3.
+The model solves for the supersaturation of Mg2PPi·3.5H2O as defined in Eq. 1. The notebook reproduces Figure 4b,c — phase diagrams comparing predicted solubility boundaries against experimental precipitation observations at 4 mM and 20 mM ATP. Free ion concentrations [Mg2+] and [PPi4-] are determined by solving the speciation equilibria listed in Table S1 (SI Section 5), which govern how Mg, PPi, ATP, spermidine, Na+, and H+ partition among complexes in the IVT mixture (see Figure 4a). Equilibrium constants at 37°C are obtained from the 25°C values in Table S1 via the van't Hoff relation. The single fitted parameter is Ksp of Mg2PPi·3.5H2O, fit to the ICP-MS solubility measurements in Figure S3.
 
-The notebook reproduces Figure 4b,c — phase diagrams comparing predicted solubility boundaries against experimental precipitation observations at 4 mM and 20 mM ATP.
 
 ## Running
 
