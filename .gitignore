@@ -12,6 +12,9 @@
 *.jl.*.cov
 *.jl.mem
 
+# Paper PDFs
+Mg2PPi_shared*.pdf
+
 # OS files
 Thumbs.db
 .DS_Store
