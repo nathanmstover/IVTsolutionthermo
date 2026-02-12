@@ -1,11 +1,12 @@
 # Solubility model for Mg2PPi in IVT reaction conditions.
 #
-# Solves for the Mg2PPi phase boundary by finding the set of free ion concentrations
-# (H+, Mg2+, Na+, spermidine) and extent of precipitation (nu) that simultaneously
-# satisfy mass balances, charge balance, and the solubility product constraint.
+# Implements the speciation framework described in Section 2.1 and the Methods
+# ("Speciation modeling") of the paper. Solves for the Mg2PPi phase boundary by
+# finding free ion concentrations (H+, Mg2+, Na+, spermidine) and extent of
+# precipitation (nu) that simultaneously satisfy mass balances, charge balance,
+# and the solubility product constraint (Eq. 1).
 #
-# "RO" = reduced order: PPi concentration is determined from the other species via
-# mass balance rather than being solved as an independent free variable.
+# The speciation reactions and their equilibrium constants are listed in Table S1.
 
 """
     getsolubilityRO(parameters, PPi, MgCl2, ATP; spermadinetot, tol)
@@ -82,16 +83,11 @@ end
                       spermadinetot, H, Mg, Na, Cl, OAc, spermadine)
 
 Given free ion concentrations and total concentrations, compute:
-  1. All complex species concentrations via equilibrium expressions
-  2. Supersaturation of Mg2PPi: sigma = [Mg2+]^2 * [PPi4-] / Ksp  (Eq. 1 in paper)
+  1. All complex species concentrations via the equilibrium reactions in Table S1
+  2. Supersaturation of Mg2PPi: sigma = [Mg2+]^2 * [PPi4-] / Ksp  (Eq. 1)
   3. Residuals for charge balance and mass balances (Mg, Na, spermidine)
 
-PPi is determined from its mass balance (reduced-order approach) rather than
-being a free variable. Complexes considered:
-  - PPi: HPPi, H2PPi, MgPPi, Mg2PPi, Mg3PPi, HMgPPi, H2MgPPi, NaPPi, Na2PPi
-  - NTP: HNTP, MgNTP, Mg2NTP, HMgNTP, NaNTP, spermidine-NTP, spermidine2-NTP
-  - Pi:  MgPi, HPi, NaPi
-  - Buffer: HBuffer (protonated Tris)
+PPi is determined from its mass balance rather than being a free variable.
 """
 function speciationmodelRO(param, NTPtot, Mgtot, Buffertot, PPitot, Pitot, Natot, spermadinetot, H, Mg, Na, Cl, OAc, spermadine; buffer_pka = 8.1)
 

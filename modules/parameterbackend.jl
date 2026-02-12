@@ -1,7 +1,8 @@
 # Parameter management and thermodynamic constants for the Mg2PPi speciation model.
 #
-# Equilibrium constants (Ks) are defined at 25°C. Temperature adjustment to 37°C
-# is done via the van't Hoff equation using enthalpy values (ΔHs).
+# Equilibrium constants (Ks) and enthalpies (ΔHs) correspond to the speciation
+# reactions in Table S1 of the supporting information. Constants are defined at 25°C;
+# temperature adjustment to 37°C uses the van't Hoff relation (Table S1 caption).
 
 """
     newtempKs(Ks25, ΔHs, T)
@@ -80,8 +81,9 @@ addtoinputlist!(list, parameter::Parameter) = append!(list, [parameter])
 Define all equilibrium constants and enthalpies for the IVT speciation model.
 Returns (Ks_model, ΔHs_model) where each is an IVTmodel containing Parameter objects.
 
-Sources for equilibrium constants are noted inline. The Ksp for Mg2PPi·3.5H2O
-is set to a placeholder here and overridden in the notebook after fitting.
+Each reaction below corresponds to a row of Table S1 in the supporting information.
+Bracketed references (e.g. [2]) match the SI bibliography. The Ksp for Mg2PPi·3.5H2O
+is set to a placeholder here and overridden in the notebook after fitting to Figure S3 data.
 """
 function setupmodel_thermo()
     Ks = []

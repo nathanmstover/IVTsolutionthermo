@@ -6,9 +6,9 @@ Ionic speciation model for predicting Mg2PPi solubility in IVT reaction mixtures
 
 ## What this code does
 
-The model implements the thermodynamic framework described in Section 2.1 of the paper. It computes the supersaturation of Mg2PPi (Eq. 1) by solving for the free ion concentrations [Mg2+] and [PPi4-] from a speciation network that includes complexes with ATP, spermidine, Na+, H+, and Tris buffer (Figure 4a, Table S1). The single fitted parameter is the solubility product Ksp of Mg2PPi·3.5H2O, fit to ICP-MS solubility measurements at 25 and 37°C. Temperature dependence is handled via the van't Hoff equation.
+The model solves for the supersaturation of Mg2PPi·3.5H2O as defined in Eq. 1. Free ion concentrations [Mg2+] and [PPi4-] are determined by solving the speciation equilibria listed in Table S1 (SI Section 5), which govern how Mg, PPi, ATP, spermidine, Na+, and H+ partition among complexes in the IVT mixture (see Figure 4a for a schematic). Equilibrium constants at 37°C are obtained from the 25°C values in Table S1 via the van't Hoff relation. The single fitted parameter is Ksp of Mg2PPi·3.5H2O, fit to the ICP-MS solubility measurements in Figure S3.
 
-The notebook reproduces the model predictions in Figure 4b,c — phase diagrams comparing predicted solubility boundaries against experimental precipitation observations at 4 mM and 20 mM ATP.
+The notebook reproduces Figure 4b,c — phase diagrams comparing predicted solubility boundaries against experimental precipitation observations at 4 mM and 20 mM ATP.
 
 ## Running
 
