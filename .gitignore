@@ -1,0 +1,17 @@
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Claude Code
+.claude/
+
+# Excel files (CSV versions are tracked instead)
+*.xlsx
+
+# Julia
+*.jl.cov
+*.jl.*.cov
+*.jl.mem
+
+# OS files
+Thumbs.db
+.DS_Store
